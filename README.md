@@ -29,14 +29,14 @@ Interactive games to reinforce learning and track progress.
 
 ## Technologies Used
 #### Programming Languages:
-Python, JavaScript, HTML, CSS
+`Python`, `JavaScript`, `HTML`, `CSS`
 
 #### Libraries:
 ##### Machine Learning:
-Keras TensorFlow OpenCV MediaPipe NumPy Pandas Matplotlib
+`Keras` `TensorFlow` `OpenCV` `MediaPipe` `NumPy` `Pandas` `Matplotlib`
 
 ##### Web:
-Flask BeautifulSoup PyAudio SpeechRecognition
+`Flask` `BeautifulSoup` `PyAudio` `SpeechRecognition`
 
 ## Installation
 ### To install the project and its dependencies, follow these steps:
@@ -67,4 +67,6 @@ To run the application, execute the following command in your terminal
 ```bash
  python app.py
 ```
+
+
 
