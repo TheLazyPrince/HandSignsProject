@@ -44,14 +44,14 @@ SpeechRecognition
 ## Installation
 To install the project and its dependencies, follow these steps:
 1. Clone the repository:
-    git clone https://github.com/yourusername/HandSignsProject.git
+#### git clone https://github.com/yourusername/HandSignsProject.git
    
 2.Navigate to the project directory:
-    cd HandSignsProject
+#### cd HandSignsProject
 
 3.Run the requirements.txt file
-    pip install -r requirements.txt
+#### pip install -r requirements.txt
     
 ## Usage
 To run the application, execute the following command in your terminal:
-    python app.py
+#### python app.py
