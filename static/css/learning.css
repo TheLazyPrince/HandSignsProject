@@ -1,0 +1,165 @@
+body {
+    background-image: url('/static/images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 800;
+    font-size: 5.5em;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+    font-family: rubik;
+}
+
+/* כפתור דף הבית */
+.home-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    border-radius: 60px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: rubik;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    transform: scale(1.049);
+}
+
+.titlePage {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 700;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    padding: 10px 40px;
+    margin-top: 40px;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+}
+
+.menue {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.learn {
+    margin: 0 20px;
+    padding: 15px;
+    background-color: rgb(236, 197, 214);
+    border-radius: 40px;
+    box-shadow: 7px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.title {
+    text-align: center;
+    padding: 7px;
+    font-family: rubik;
+    font-weight: 500;
+    font-size: 1.8rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+}
+
+.image-link {
+    display: inline-block;
+}
+
+.image-link img:hover {
+    transform: scale(1.05);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* התאמה למכשירים בינוניים - טאבלטים */
+@media (max-width: 1600px) {
+    header {
+        font-size: 4em;
+        margin-bottom: -25px;
+    }
+    .titlePage {
+        font-size: 3rem;
+    }
+   
+    .learn {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* התאמה למכשירים קטנים - סמארטפונים */
+@media (max-width: 768px) {
+    header {
+        font-size: 3em;
+        padding-top: 15px;
+    }
+    .titlePage {
+        font-size: 2.5rem;
+        padding: 8px 20px;
+    }
+    .home-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        top: 15px;
+        right: 15px;
+    }
+    .learn {
+        width: 150px;
+        height: 150px;
+        padding: 10px;
+    }
+    .title {
+        font-size: 1.5rem;
+        height: 40px;
+    }
+}
+
+/* התאמה למכשירים קטנים מאוד - סמארטפונים קטנים */
+@media (max-width: 480px) {
+    header {
+        font-size: 2em;
+        padding-top: 10px;
+    }
+    .titlePage {
+        font-size: 2rem;
+    }
+    .home-button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    .learn {
+        width: 120px;
+        height: 120px;
+        padding: 8px;
+    }
+    .title {
+        font-size: 1.2rem;
+        height: 30px;
+    }
+}

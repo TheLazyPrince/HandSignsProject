@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אתר פרויקט זיהוי ידיים</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>פרויקט זיהוי ידיים</h1>
+        <p>שמות המפתחים: יפית אבזוב וינון רעאני</p>
+    </header>
+
+    <div class="grid-container">
+        <!-- חלק 1 -->
+        <div class="grid-item">
+            <h2>Your name in sign language</h2>
+            <div class="buttons">
+            <form action="/save_name" method="POST">
+                <label for="username">Enter your name:</label>
+                <input type="text" id="username" name="username">
+                <button type="submit" name="action" value="save">Save</button>
+                <button type="submit" name="action" value="clear">Clear</button>
+            </form>
+                </div>
+                {% if images %}
+            <div class="images">
+                {% for image in images %}
+                    <img src="{{ image }}" alt="Letter Image" style="width:100px;height:100px;">
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- חלק 2 -->
+        <div class="grid-item">
+            <h2>Camera & Prediction</h2>
+            <div id="camera">
+                <img src="{{ url_for('video_feed') }}" id="videoFeed" alt="Video Feed">
+            </div>
+            <p id="predictionText">מספר שחוזה:</p>
+            <img id="predictionImage" src="" alt="תמונה של החיזוי">
+        </div>
+
+        <!-- חלק 3 -->
+        <div class="grid-item">
+            <h2>Speech Recognition</h2>
+            <img id="micImage" src="/static/images/wired-outline-188-microphone-recording-hover-recording.png" 
+                 alt="הפעל זיהוי דיבור" 
+                 onclick="startSpeechRecognition()">
+            <p id="speechResult"></p>
+            <img id="speechImage" src="" alt="תמונה תואמת">
+        </div>
+
+        <!-- חלק 4 -->
+        <div class="grid-item">
+            <h2>זיהוי כף יד עם MediaPipe</h2>
+            <div>
+                <button onclick="captureImage()">צלם תמונה</button>
+                <button onclick="captureAgain()">צלם שוב</button>
+                <button onclick="sendPrediction()">שלח</button>
+                <button onclick="getRandomCharacter()">גריל אות אקראית</button>
+            </div>
+            <div>
+                <h3>תמונה שצולמה:</h3>
+                <img id="capturedImage" src="" alt="תמונה שצולמה" width="640" height="480">
+            </div>
+            <div>
+                <h3>תחזית מהמודל:</h3>
+                <p id="predictionResult"></p>
+            </div>
+            <div>
+                <h3>אות אקראית:</h3>
+                <p id="randomCharacter">{{ random_character }}</p>
+            </div>
+            <div>
+                <h3>תוצאה:</h3>
+                <p id="checkResult"></p>
+            </div>
+
+            
+        <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p id="popupMessage"></p>
+            <button onclick="closePopup()">המשך</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+    <script src="{{ url_for('static', filename='resources/functions.js') }}"></script>
+</body>
+</html>

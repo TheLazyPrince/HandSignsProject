@@ -1,0 +1,152 @@
+ /* סגנונות כלליים */
+ body {
+    background-image: url('/static/images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 800;
+    font-size: 5.5em;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+    font-family: rubik;
+}
+
+p {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 10px 20px;
+}
+
+.titlePage {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 700;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    padding: 10px 40px;
+    margin: 40px 20px 0;
+    color: #ffffff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+}
+
+.names {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 200;
+    font-size: 2.5em;
+  
+}
+
+.custom-button {
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    border-radius: 60px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 30px 60px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    font-family: rubik;
+    font-weight: 600;
+    margin: 14px auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.custom-button:hover {
+    background: linear-gradient(to right, #88d3ea, #f8a8c5);
+    box-shadow: 10px 16px 16px rgba(0, 0, 0, 0.6);
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 200px;
+   
+}
+
+/* התאמה למסכים גדולים במיוחד */
+@media (max-width: 1600px) {
+    header {
+        margin-bottom: -25px;
+        font-size: 4em;
+    }
+    .titlePage {
+      
+        font-size: 3rem;
+    }
+    .home-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    .names {
+        font-size: 2em;
+    }
+    .custom-button {
+        padding: 30px 50px;
+        font-size: 2rem;
+    }
+}
+
+/* התאמה למכשירים בינוניים - טאבלטים */
+@media (max-width: 1024px) {
+    header {
+        font-size: 4em;
+    }
+    .titlePage {
+        font-size: 3rem;
+    }
+    .names {
+        font-size: 2em;
+    }
+    .custom-button {
+        padding: 18px 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* התאמה למכשירים קטנים - סמארטפונים */
+@media (max-width: 768px) {
+    header {
+        font-size: 3em;
+        padding-top: 15px;
+    }
+    .titlePage {
+        font-size: 2.5rem;
+        padding: 8px 20px;
+    }
+    .names {
+        font-size: 1.8em;
+    }
+    .custom-button {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* התאמה למכשירים קטנים מאוד - סמארטפונים קטנים */
+@media (max-width: 480px) {
+    header {
+        font-size: 2em;
+        padding-top: 10px;
+    }
+    .titlePage {
+        font-size: 2rem;
+    }
+    .names {
+        font-size: 1.5em;
+    }
+    .custom-button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/learningByAudio.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>זיהוי כף יד עם MediaPipe</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/introjs.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>Hand Sign Learning</header>
+    <p class="titlePage">Learning Letters By Audio</p>
+    <a href="/learning" class="home-button">Learning</a>
+    
+    <button class="start-steps">
+        <img src="/static/images/logoInstracture.png" width="50px">
+        Instructures</button>
+    <div class="container-all">
+        <!-- צד שמאל - גלריה -->
+        <div class="gallery-container">
+           
+    <div class="gallery">
+        <img src="/static/images/hand sign none/zero.png" alt="Image 0" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/one.png" alt="Image 1" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/two.png" alt="Image 2" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/three.png" alt="Image 3" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/four.png" alt="Image 4" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/five.png" alt="Image 5" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/six.png" alt="Image 6" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/seven.png" alt="Image 7" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/eight.png" alt="Image 8" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/nine.png" alt="Image 9" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/ten.png" alt="Image 10" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/a.png" alt="Image 11" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/b.png" alt="Image 12" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/c.png" alt="Image 13" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/d.png" alt="Image 14" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/e.png" alt="Image 15" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/f.png" alt="Image 16" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/g.png" alt="Image 17" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/h.png" alt="Image 18" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/i.png" alt="Image 19" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/j.png" alt="Image 20" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/k.png" alt="Image 21" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/l.png" alt="Image 22" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/m.png" alt="Image 23" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/n.png" alt="Image 24" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/o.png" alt="Image 25" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/p.png" alt="Image 26" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/q.png" alt="Image 27" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/r.png" alt="Image 28" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/s.png" alt="Image 29" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/t.png" alt="Image 30" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/u.png" alt="Image 31" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/v.png" alt="Image 32" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/w.png" alt="Image 33" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/x.png" alt="Image 34" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/y.png" alt="Image 35" onclick="displayImage(this)">
+                <img src="/static/images/hand sign none/z.png" alt="Image 36" onclick="displayImage(this)">
+        </div>
+        </div>
+    <div class="container">
+        <!-- קופסה לתמונה המוגרלת -->
+         <div class="pics">
+            <div class="box" >
+                <img id="speechImage" style="display: none;">
+            </div>
+        <div class="box">
+            <img id="randomImage" src="" alt="תמונה אקראית" style="display: none;">
+
+        </div>
+         </div>
+        <!-- קופסה לתמונה שהתקבלה מזיהוי הדיבור -->
+
+    <!-- קופסה לתוצאות טקסטואליות ולכפתור ההפעלה של המיקרופון -->
+   
+        <div class="box">
+            <img id="micImage" src="../static/images/wired-outline-188-microphone-recording-hover-recording.png" 
+                alt="הפעל זיהוי דיבור" 
+                onclick="startSpeechRecognition()">
+        </div>
+        <div class="box">
+            <p id="speechResult"></p>
+        </div>
+        <button id="showAnswerButton" style="display: none;">Show Answer</button>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/intro.min.js"></script>
+    <script src="/static/JS/learningByAudio.js"></script>
+      
+</body>
+</html>

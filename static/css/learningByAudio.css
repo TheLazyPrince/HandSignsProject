@@ -1,0 +1,350 @@
+body {
+    background-image: url('/static/images/background.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 800;
+    font-size: 5.5em;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    font-family: rubik;
+}
+
+p {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+/* כפתור דף הבית */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    border-radius: 60px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: rubik;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    transform: scale(1.049);
+}
+
+.titlePage {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 700;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    padding: 10px 40px;
+    margin-top: 40px;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+#speechRecognition {
+    width: 80%;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#micImage {
+    cursor: pointer;
+    width: 250px;
+    height: 250px;
+    border-radius: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#micImage:hover {
+    transform: scale(1.1);
+}
+
+.speech-button {
+    height: 100px;
+    width: 200px;
+    cursor: pointer;
+    background-color: #6c5b7b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.speech-button:hover {
+    transform: scale(1.05);
+}
+
+#speechResult {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+}
+
+#speechImage, #randomImage {
+    margin-top: 50px;
+    max-width: 200px;
+    max-height: 200px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gif-image {
+    border: 10px solid rgb(156, 212, 156);
+}
+
+.container {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 120px;
+    margin-left: 120px;
+    height: 650px;
+    padding: 20px;
+    width: fit-content;
+}
+
+.guidance {
+    display: flex;
+    flex-direction: column;
+}
+
+.guidance p {
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    margin: auto;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    width: 700px;
+    text-align: center;
+    padding: 5px;
+    margin-top: -10px;
+}
+
+button {
+    background: linear-gradient(135deg, #f7b3cc, #a0dff4);
+    border: none;
+    border-radius: 20px;
+    color: #333;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-container {
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow-y: auto;
+    max-height: 90vh;
+    width: fit-content;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 13px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.gallery img {
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    border: 5px solid #bacfe9;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.container-all {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: calc(100% - 100px);
+    padding: 10px;
+    margin: auto;
+}
+
+.pics {
+    display: flex;
+    align-items: flex-start;
+}
+
+.selected {
+    outline: 5px solid black;
+}
+
+.start-steps {
+    float: right;
+    margin-top: -30px;
+    background: rgb(244, 235, 213);
+    border: none;
+    border-radius: 40px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 5px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: rubik;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    position: absolute;
+    top: 120px;
+    right: 20px;
+}
+
+.start-steps:hover {
+    transform: scale(1.049);
+}
+
+/* התאמה למסכים גדולים במיוחד */
+@media (max-width: 1600px) {
+    header {
+        font-size: 4em;
+        margin-bottom: -25px;
+    }
+
+    .titlePage {
+        font-size: 3rem;
+    }
+
+    .names {
+        font-size: 2em;
+    }
+
+    .container {
+        height: 500px;
+        padding: 20px;
+        width: fit-content;
+        margin-right: 40px;
+        margin-left: 20px;
+    }
+
+    .gallery-container {
+        max-height: 100%;
+        width: fit-content;
+    }
+
+    .gallery {
+        margin-left: 15px;
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .gallery img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container-all {
+        height: fit-content;
+        padding: 10px;
+    }
+
+    #micImage {
+        width: 200px;
+        height: 200px;
+    }
+
+    #speechImage, #randomImage {
+        margin-top: 40px;
+        max-width: 150px;
+        max-height: 150px;
+        margin-bottom: 40px;
+    }
+}
+.customTooltip {
+    background-color: #f9f8f9; /* צבע רקע */
+    border: 2px solid #7a8cba; /* צבע מסגרת */
+    border-radius: 15px; /* פינות מעוגלות */
+    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.2); /* צל */
+   
+}
+.customTooltip img {
+    max-width: 280px; /* שמירת פרופורציות של התמונה */
+    height: auto;
+}
+
+.customTooltip * {
+    color: #050000; /* צבע טקסט */
+    font-size: 22px; /* גודל פונט */
+    font-family: rubik;
+   
+}
+
+.customTooltip .introjs-tooltip-title {
+    color: #0a41c9; /* צבע כותרת */
+    font-weight: bold; /* הפוך את הכותרת לעבה */
+}
+
+.customTooltip .introjs-arrow {
+    border-bottom-color: #f0f0f0; /* צבע החץ */
+}
+.customTooltip .introjs-button {
+    background-color: #e3e1e1; /* צבע רקע */
+    color: #000000; /* צבע טקסט */
+    border: none; /* ללא מסגרת */
+    border-radius: 7px; /* פינות מעוגלות */
+    padding: 10px 15px; /* רווחים פנימיים */
+    font-size: 18px; /* גודל פונט */
+    cursor: pointer; /* ידית על העכבר */
+    transition: background-color 0.3s; /* אנימציה על צבע הרקע */
+}
+
+.customTooltip .introjs-button:hover {
+    background-color: #fbfbfc; /* צבע רקע בעת ריחוף */
+}
+
+.customTooltip .introjs-button:focus {
+    outline: none; /* הסרת קו מתאר */
+}
+   /* עיצוב התמונה */
+   .intro-image {
+    display: block;         /* הפוך את התמונה לחסימת תצוגה */
+    margin: 0 auto;       /* הגדר רווח אוטומטי משמאל ומימין */
+    max-width: 100%;      /* התמונה תתאים לרוחב הפופ-אפ */
+    height: auto;  
+            
+        }

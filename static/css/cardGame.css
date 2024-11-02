@@ -1,0 +1,236 @@
+/* הקוד שלך כאן */
+body {
+    background-image: url('/static/images/background.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 800;
+    font-size: 5.5em;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    font-family: rubik;
+}
+
+p {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+/* כפתור דף הבית */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    border-radius: 60px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: rubik;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    transform: scale(1.049);
+}
+
+.titlePage {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 700;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    padding: 10px 40px;
+    margin-top: 40px;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 750px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: fit-content;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 13px;
+    justify-items: center;
+    width: fit-content;
+}
+
+.gallery img {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #bacfe9;
+    cursor: pointer;
+    transition: transform 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
+    border-radius: 20px;
+    box-sizing: border-box; /* ודא שה-padding וה-border לא ישפיעו על הגודל הכולל */
+}
+
+.gallery img.selected {
+    padding: 7px;
+    background-color: grey;
+    border-radius: 20px;
+}
+
+.gallery img.matched {
+    padding: 7px;
+    background-color: green;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#congratulationsPopup {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 0px;
+    border: 1px solid #888;
+    width: 500px;
+    height: 520px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    border-radius: 60px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 20px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: rubik;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media (max-width: 1600px) {
+    header {
+        font-size: 4em;
+        margin-bottom: -25px;
+    }
+
+    .titlePage {
+        font-size: 3rem;
+    }
+
+    .cards,
+    .names {
+        width: 200px;
+        height: 200px;
+    }
+
+    .gallery-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        height: 750px;
+        padding: 20px;
+        display: flex;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .gallery img {
+        width: 95px;
+        height: 95px;
+        border: 5px solid #bacfe9;
+        cursor: pointer;
+        transition: transform 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
+        border-radius: 20px;
+        box-sizing: border-box; /* ודא שה-padding וה-border לא ישפיעו על הגודל הכולל */
+    }
+}
+.customTooltip {
+    background-color: #f9f8f9; /* צבע רקע */
+    border: 2px solid #7a8cba; /* צבע מסגרת */
+    border-radius: 15px; /* פינות מעוגלות */
+    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.2); /* צל */
+}
+.customTooltip img {
+    max-width: 150px; /* שמירת פרופורציות של התמונה */
+   
+}
+
+.customTooltip * {
+    color: #050000; /* צבע טקסט */
+    font-size: 22px; /* גודל פונט */
+    font-family: rubik;
+}
+
+.customTooltip .introjs-tooltip-title {
+    color: #0a41c9; /* צבע כותרת */
+    font-weight: bold; /* הפוך את הכותרת לעבה */
+}
+
+.customTooltip .introjs-arrow {
+    border-bottom-color: #f0f0f0; /* צבע החץ */
+}
+.customTooltip .introjs-button {
+    background-color: #e3e1e1; /* צבע רקע */
+    color: #000000; /* צבע טקסט */
+    border: none; /* ללא מסגרת */
+    border-radius: 7px; /* פינות מעוגלות */
+    padding: 10px 15px; /* רווחים פנימיים */
+    font-size: 18px; /* גודל פונט */
+    cursor: pointer; /* ידית על העכבר */
+    transition: background-color 0.3s; /* אנימציה על צבע הרקע */
+}
+
+.customTooltip .introjs-button:hover {
+    background-color: #fbfbfc; /* צבע רקע בעת ריחוף */
+}
+
+.customTooltip .introjs-button:focus {
+    outline: none; /* הסרת קו מתאר */
+}
+ 
+   .intro-image {
+    margin: 0 auto;       /* הגדר רווח אוטומטי משמאל ומימין */
+          /* התמונה תתאים לרוחב הפופ-אפ */
+     
+            
+        }

@@ -1,0 +1,314 @@
+body {
+    background-image: url('/static/images/background.png');
+    background-size: cover;
+    font-family: Rubik, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 800;
+    font-size: 5.5em;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    text-align: center;
+    font-family: Rubik;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 100px); /* גובה המסך פחות הגובה של הכותרת */
+    padding: 20px;
+}
+
+.gallery-container {
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow-y: auto; /* גלילה אנכית */
+    max-height: 90vh; /* הגבלת הגובה לגובה המסך */
+    width: fit-content;
+    display: flex;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    gap: 13px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.gallery img {
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    border: 5px solid #bacfe9;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.camera-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* מאפשר פיזור האלמנטים בין למעלה ולמטה */
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 100px;
+    margin-left: 100px;
+    height: 650px;
+    width: 600px;
+    padding: 20px; /* כדי ליצור מרווח פנימי בקונטיינר */
+}
+
+#camera {
+    margin-top: auto; /* מוודא שהמצלמה תישאר בתחתית הקונטיינר */
+    margin-bottom: 0;
+}
+
+#camera img {
+    height: 23rem;
+    width: 30rem;
+    border-radius: 20px;
+    border: 5px solid #749ac9;
+}
+
+#selectedImage {
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+    margin-top: 2px;
+    border: 5px solid #bacfe9;
+    display: none;
+}
+
+#predictionText {
+    font-weight: bold;
+    color: #00070a;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 5rem;
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    border-radius: 60px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Rubik;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    transform: scale(1.049);
+}
+
+.start-steps {
+    float: right;
+    margin-top: -30px;
+    background: rgb(244, 235, 213);
+    border: none;
+    border-radius: 40px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 5px 40px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Rubik;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 120px;
+    right: 20px;
+}
+
+.start-steps:hover {
+    transform: scale(1.049);
+}
+
+.titlePage {
+    text-align: center;
+    font-family: Rubik;
+    font-weight: 700;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    padding: 10px 40px;
+    margin-top: 40px;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+#digitalTimer {
+    font-size: 35px;
+    font-family: Rubik;
+    color: #000800;
+    text-align: center;
+    background-color: rgba(238, 241, 247, 0.995);
+    padding: 10px;
+    border-radius: 30px;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+}
+
+.bottomPic {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    margin-top: -10px;
+}
+
+.title {
+    text-align: center;
+    margin: 30px;
+    padding: 7px;
+    margin-bottom: 30px;
+    font-family: Rubik;
+    font-weight: 500;
+    font-size: 1.8rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* התאמה למסכים גדולים במיוחד */
+@media (max-width: 1600px) {
+    header {
+        font-size: 4em;
+        margin-bottom: -25px;
+    }
+
+    .titlePage {
+        font-size: 3rem;
+    }
+
+    .names {
+        font-size: 2em;
+    }
+
+    .camera-container {
+        height: 600px;
+        padding: 20px;
+        width: fit-content;
+        margin-right: 40px;
+        margin-left: 20px;
+    }
+
+    .gallery-container {
+        max-height: 100%;
+        width: fit-content;
+    }
+
+    .gallery {
+        margin-left: 15px;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .gallery img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container {
+        height: fit-content;
+        padding: 5px;
+        margin-top: -30px;
+    }
+
+    #digitalTimer {
+        font-size: 20px;
+        width: 150px;
+        height: 30px;
+    }
+
+    #predictionText {
+        margin-top: -5px;
+        font-size: 3rem;
+    }
+}
+.customTooltip {
+    background-color: #f9f8f9; /* צבע רקע */
+    border: 2px solid #7a8cba; /* צבע מסגרת */
+    border-radius: 15px; /* פינות מעוגלות */
+    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.2); /* צל */
+    
+           
+}
+.customTooltip img {
+    max-width: 300px; /* שמירת פרופורציות של התמונה */
+    height: auto;
+}
+
+.customTooltip * {
+    color: #050000; /* צבע טקסט */
+    font-size: 22px; /* גודל פונט */
+    font-family: rubik;
+}
+
+.customTooltip .introjs-tooltip-title {
+    color: #0a41c9; /* צבע כותרת */
+    font-weight: bold; /* הפוך את הכותרת לעבה */
+}
+
+.customTooltip .introjs-arrow {
+    border-bottom-color: #f0f0f0; /* צבע החץ */
+}
+.customTooltip .introjs-button {
+    background-color: #e3e1e1; /* צבע רקע */
+    color: #000000; /* צבע טקסט */
+    border: none; /* ללא מסגרת */
+    border-radius: 7px; /* פינות מעוגלות */
+    padding: 10px 15px; /* רווחים פנימיים */
+    font-size: 18px; /* גודל פונט */
+    cursor: pointer; /* ידית על העכבר */
+    transition: background-color 0.3s; /* אנימציה על צבע הרקע */
+}
+
+.customTooltip .introjs-button:hover {
+    background-color: #fbfbfc; /* צבע רקע בעת ריחוף */
+}
+
+.customTooltip .introjs-button:focus {
+    outline: none; /* הסרת קו מתאר */
+}
+   /* עיצוב התמונה */
+   .intro-image {
+    display: block;         /* הפוך את התמונה לחסימת תצוגה */
+    margin: 0 auto;       /* הגדר רווח אוטומטי משמאל ומימין */
+    max-width: 100%;      /* התמונה תתאים לרוחב הפופ-אפ */
+    height: auto;  
+            
+        }

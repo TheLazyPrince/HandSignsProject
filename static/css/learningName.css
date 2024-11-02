@@ -1,0 +1,246 @@
+body {
+    background-image: url('/static/images/background.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow-x: hidden; /* מבטל גלילה אופקית */
+    margin: 0; /* מסיר margin מהגוף */
+    padding: 0; /* מסיר padding מהגוף */
+}
+
+header {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 800;
+    font-size: 5.5em;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    font-family: rubik;
+}
+
+p {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+/* כפתור דף הבית */
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    border-radius: 60px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: rubik;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    transform: scale(1.049);
+}
+
+.titlePage {
+    text-align: center;
+    font-family: rubik;
+    font-weight: 700;
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    padding: 10px 40px;
+    margin-top: 40px;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 10px solid #b1d3ea;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px; /* רוחב מקסימלי של הקונטיינר */
+    width: 100%; /* מתאים למסך */
+    min-height: 300px; /* גובה מינימלי */
+    margin: 0 auto; /* ממקם במרכז */
+    box-shadow: 4px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* הוסף padding פנימי */
+    overflow: hidden; /* מוסיף overflow כדי למנוע גלילה */
+    margin-top: -21px;
+    transition: height 0.3s ease; /* מעבר חלק כאשר הגובה משתנה */
+}
+
+.form-container {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-family: rubik;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+#savecleer {
+    display: flex;
+    justify-content: center; /* ממקם את הכפתורים במרכז */
+    gap: 20px; /* רווח בין הכפתורים */
+    margin-top: 5px; /* רווח מעל הכפתורים */
+    margin-bottom: 20px;
+}
+
+button {
+    background: linear-gradient(to right, #a0dff4, #f7b3cc);
+    border: none;
+    border-radius: 60px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    color: #333;
+    padding: 18px 20px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: rubik;
+    font-weight: 600;
+}
+
+button:hover {
+    background: linear-gradient(to right, #88d3ea, #f8a8c5); /* שינוי גרדיינט בעת מעבר עכבר */
+    box-shadow: 6px 7px 10px rgba(0, 0, 0, 0.6); /* הגברת הצל */
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap; /* מאפשר לתמונות לעבור לשורה הבאה */
+    justify-content: center; /* ממקם את התמונות במרכז */
+    margin-top: 20px;
+    gap: 10px; /* רווח בין התמונות */
+}
+
+.label {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.images img {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #b1caf4;
+    border-radius: 20px;
+}
+
+#camera {
+    margin-top: auto; /* מוודא שהמצלמה תישאר בתחתית הקונטיינר */
+    margin-bottom: 0; /* אפשרות להוסיף מרווח קטן בתחתית אם צריך */
+}
+
+#camera img {
+    height: 22rem;
+    width: 30rem;
+    border-radius: 20px;
+    border: 5px solid #749ac9;
+}
+
+.box {
+    margin-top: -40px;
+}
+
+.box p {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#predictionText {
+    font-size: 2rem;
+    margin-top: 5px;
+}
+
+@media (max-width: 1600px) {
+    header {
+        font-size: 4em;
+        margin-bottom: -25px;
+    }
+    .titlePage {
+        font-size: 3rem;
+    }
+    .cards, .names {
+        width: 200px;
+        height: 200px;
+    }
+}
+.customTooltip {
+    background-color: #f9f8f9; /* צבע רקע */
+    border: 2px solid #7a8cba; /* צבע מסגרת */
+    border-radius: 15px; /* פינות מעוגלות */
+    box-shadow: 5px 4px 20px rgba(0, 0, 0, 0.2); /* צל */
+    width: 300px;
+}
+.customTooltip img {
+    max-width: 250px; /* שמירת פרופורציות של התמונה */
+    height: auto;
+}
+
+.customTooltip * {
+    color: #050000; /* צבע טקסט */
+    font-size: 22px; /* גודל פונט */
+    font-family: rubik;
+}
+
+.customTooltip .introjs-tooltip-title {
+    color: #0a41c9; /* צבע כותרת */
+    font-weight: bold; /* הפוך את הכותרת לעבה */
+}
+
+.customTooltip .introjs-arrow {
+    border-bottom-color: #f0f0f0; /* צבע החץ */
+}
+.customTooltip .introjs-button {
+    background-color: #e3e1e1; /* צבע רקע */
+    color: #000000; /* צבע טקסט */
+    border: none; /* ללא מסגרת */
+    border-radius: 7px; /* פינות מעוגלות */
+    padding: 10px 15px; /* רווחים פנימיים */
+    font-size: 18px; /* גודל פונט */
+    cursor: pointer; /* ידית על העכבר */
+    transition: background-color 0.3s; /* אנימציה על צבע הרקע */
+}
+
+.customTooltip .introjs-button:hover {
+    background-color: #fbfbfc; /* צבע רקע בעת ריחוף */
+}
+
+.customTooltip .introjs-button:focus {
+    outline: none; /* הסרת קו מתאר */
+}
+   /* עיצוב התמונה */
+   .intro-image {
+    display: block;         /* הפוך את התמונה לחסימת תצוגה */
+    margin: 0 auto;       /* הגדר רווח אוטומטי משמאל ומימין */
+    max-width: 100%;      /* התמונה תתאים לרוחב הפופ-אפ */
+    height: auto;  
+            
+        }

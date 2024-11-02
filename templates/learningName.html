@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/learningName.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>זיהוי כף יד עם MediaPipe</title>
+    <style>
+       
+    
+</style>
+<header>Hand Sign Learning</header>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/introjs.min.css" rel="stylesheet">
+<body>
+    <p class="titlePage">Hand Sign Name Writing</p>
+    <a href="/practicing" class="home-button">Practice</a>
+<div class="container">
+    <div class="box">
+        <p>Enter your name:</p>
+            <div class="buttons">
+                <form action="/save_name" method="POST"  onsubmit="resetImagesOpacity()">
+                    <label for="username"></label>
+                    <input type="text" id="username" name="username">
+                    <div id="savecleer">
+                        <button class="save" type="submit" name="action" value="save" >Submit</button>
+                        <button type="submit" name="action" value="clear">Clear</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+    <div class="result">
+        {% if images %}
+        <div class="images">
+            {% for image in images %}
+                {% if loop.first %}
+                    <img src="{{ image }}" alt="Letter Image" onload="checkImagesLoaded()" style="opacity: 1;"> <!-- התמונה הראשונה -->
+                {% else %}
+                    <img src="{{ image }}" alt="Letter Image" onload="checkImagesLoaded()" style="opacity: 0.4;"> <!-- שאר התמונות -->
+                {% endif %}
+            {% endfor %}
+        </div>
+        <script>
+            let imagesLoaded = 0;
+            const totalImages = document.querySelectorAll('.images img').length;
+            
+            function checkImagesLoaded() {
+                imagesLoaded++;
+                console.log(imagesLoaded)
+            console.log(totalImages)
+                if (imagesLoaded === totalImages) {
+                    console.log("hi")
+                 
+                    startIntro(); // הפעל את ה-Intro.js כאשר כל התמונות נטענו
+                }
+            }
+        </script>
+        {% endif %}
+    </div>
+
+      
+        <div id="camera">
+            <img src="{{ url_for('video_feed') }}" id="videoFeed" alt="Video Feed">
+        </div>
+        <p id="predictionText"></p>
+        
+        </div>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/intro.min.js"></script>
+        <script src="/static/JS/learningName.js"></script>
+              
+              
+</body>
+</html>

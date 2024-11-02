@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/learningLetter.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>זיהוי כף יד עם MediaPipe</title>
+    
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/introjs.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <header>Hand Sign Learning</header>
+    <p class="titlePage">Learning Letters</p>
+    
+
+    <a href="/learning" class="home-button">Learning</a>
+    <button class="start-steps">
+        <img src="/static/images/logoInstracture.png" width="50px">
+        Instructures</button>
+    <div class="container">
+        
+        <!-- צד שמאל - גלריה -->
+        <div class="gallery-container">
+    <div class="gallery">
+        <img src="/static/images/Hand signs/0.png" alt="Image 0">
+        <img src="/static/images/Hand signs/1.png" alt="Image 1">
+        <img src="/static/images/Hand signs/2.png" alt="Image 2">
+        <img src="/static/images/Hand signs/3.png" alt="Image 3">
+        <img src="/static/images/Hand signs/4.png" alt="Image 4">
+        <img src="/static/images/Hand signs/5.png" alt="Image 5">
+        <img src="/static/images/Hand signs/6.png" alt="Image 6">
+        <img src="/static/images/Hand signs/7.png" alt="Image 7">
+        <img src="/static/images/Hand signs/8.png" alt="Image 8">
+        <img src="/static/images/Hand signs/9.png" alt="Image 9">
+        <img src="/static/images/Hand signs/10.png" alt="Image 10">
+        <img src="/static/images/Hand signs/a.png" alt="Image 11">
+        <img src="/static/images/Hand signs/b.png" alt="Image 12">
+        <img src="/static/images/Hand signs/c.png" alt="Image 13">
+        <img src="/static/images/Hand signs/d.png" alt="Image 14">
+        <img src="/static/images/Hand signs/e.png" alt="Image 15">
+        <img src="/static/images/Hand signs/f.png" alt="Image 16">
+        <img src="/static/images/Hand signs/g.png" alt="Image 17">
+        <img src="/static/images/Hand signs/h.png" alt="Image 18">
+        <img src="/static/images/Hand signs/i.png" alt="Image 19">
+        <img src="/static/images/Hand signs/j.png" alt="Image 20">
+        <img src="/static/images/Hand signs/k.png" alt="Image 21">
+        <img src="/static/images/Hand signs/l.png" alt="Image 22">
+        <img src="/static/images/Hand signs/m.png" alt="Image 23">
+        <img src="/static/images/Hand signs/n.png" alt="Image 24">
+        <img src="/static/images/Hand signs/o.png" alt="Image 25">
+        <img src="/static/images/Hand signs/p.png" alt="Image 26">
+        <img src="/static/images/Hand signs/q.png" alt="Image 27">
+        <img src="/static/images/Hand signs/r.png" alt="Image 28">
+        <img src="/static/images/Hand signs/s.png" alt="Image 29">
+        <img src="/static/images/Hand signs/t.png" alt="Image 30">
+        <img src="/static/images/Hand signs/u.png" alt="Image 31">
+        <img src="/static/images/Hand signs/v.png" alt="Image 32">
+        <img src="/static/images/Hand signs/w.png" alt="Image 33">
+        <img src="/static/images/Hand signs/x.png" alt="Image 34">
+        <img src="/static/images/Hand signs/y.png" alt="Image 35">
+        <img src="/static/images/Hand signs/z.png" alt="Image 36">
+        </div>
+        </div>
+      <!-- צד ימין - מצלמה, חיזוי, תמונה נבחרת -->
+     
+      <div class="camera-container">
+       
+            <div class="bottomPic">
+                <div id="digitalTimer">Timer <strong >0:00</strong></div> <!-- תצוגת השעון -->
+                <img id="selectedImage" src="">
+            </div>
+
+            <p id="predictionText"></p>
+
+            <div id="camera">
+                <img src="{{ url_for('video_feed') }}" id="videoFeed" alt="Video Feed">
+            </div>
+        
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.2.0/intro.min.js"></script>
+<script src="/static/JS/learningLetter.js"></script>
+</body>
+</html>

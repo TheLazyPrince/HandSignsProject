@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/selfTest.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>זיהוי כף יד עם MediaPipe</title>
+   
+</head>
+
+
+<body>
+    <header>Hand Sign Learning</header>
+    <p class="titlePage">Test Yourself</p>
+    <a href="/" class="home-button">Home Page</a>
+    <button class="start-steps" onclick="showEntryPopup()">
+        <img src="/static/images/logoInstracture.png" width="50px">
+        Instructures
+    </button>
+    <div class="container">
+        <div class="top-container">
+            <div class="box">
+                <div class="box">
+                    <p id="title-letter">Letter</p>
+                    <div id="block">
+                        <p id="randomCharacter"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div id="clock">
+                    <img src="../static/images/clock2.png" alt="Clock" >
+                    <div id="timer">5</div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="camera">
+            <img src="{{ url_for('video_feed') }}" id="videoFeed" alt="Video Feed">
+            <img id="capturedImage">
+            <div id="startContainer">
+                <button id="startButton">Start</button>
+            </div>
+        </div>
+        <div class="timer-and-counters-container">
+        </div>
+    </div>
+
+    <div>
+        <p id="checkResult"></p>
+    </div>
+<!-- פופ-אפ של סוף המשחק -->
+ 
+<div id="endGamePopup" style="display: none; ">
+    
+      <div class="popEndContainer">
+        <p  style="font-size: 40px; color: #000000; font-weight: 400;font-family: rubik;">THE TEST IS OVER</p>
+        <p id="scoreDisplay" style="font-size: 40px;"></p> <!-- הצגת הציון -->
+        <img id="resultImage" src="" alt="Result Image" style="display: none; width: 200px; height: 170px;" /> <!-- הצגת התמונה -->
+        
+        <div class="answer">
+            <div class="counter correct">
+                <img src="/static/images/happy.png" width="40px" height="40px"> <span id="correctCount">0</span>
+            </div>
+            <div class="counter wrong">
+                <img src="/static/images/sad.png" width="40px" height="40px"> <span id="wrongCount">0</span>
+            </div>
+        </div>
+        <div class="errors-container" style="display: flex; flex-wrap: wrap; gap: 20px; ">
+            <!-- טעויות יתווספו כאן -->
+        </div>
+        <button onclick="finishGame()">CLOSE</button>
+    </div>
+</div>
+
+    <!-- פופ-אפ שנותן משוב למשתמש -->
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img id="popupImage" src="" alt="Result Image" style="width:100px; height: 100px; display: none;"> <!-- תמונה מותאמת -->
+            <p id="predictionResult"></p>
+            <p id="popupMessage"></p>
+            <button onclick="closePopup()">CONTINUE</button>
+        </div>
+    </div>
+    
+
+    <!-- פופ-אפ שיופיע בכניסה לעמוד -->
+    <div id="entryPopup" class="popup" style="display: none; background-color: rgba(0, 0, 0, 0.8);">
+        <div class="popup-content-start">
+            <span class="close" onclick="closeEntryPopup()">&times;</span>
+            <img class="popupimg" src="/static/images/instructures.png" alt="Instructions">
+            <button onclick="closeEntryPopup()">CLOSE</button>
+        </div>
+    </div>
+
+</body>
+
+<script src="/static/JS/selfTest.js"></script>
+</html>
