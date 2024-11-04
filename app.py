@@ -20,7 +20,7 @@ hands = mp_hands.Hands()
 mp_drawing = mp.solutions.drawing_utils
 
 # טעינת המודל שלך
-model = load_model(r"C:\Users\shall\OneDrive - Holon Institute of Technology\שולחן העבודה\python\test\זיהוי ידיים עובד עם מודל\hand_landmarks.h5")  # מסלול המודל שהעלית
+model = load_model(r"hand sign model cnn tensorflow\hand_landmarks.h5")  # מסלול המודל שהעלית
 
 recognizer = sr.Recognizer()
 
@@ -211,7 +211,7 @@ def speech_recognition():
             print(f"המחשב שמע: {text}")
             if text.lower().startswith("letter "):
                 character = text.split()[1].lower()
-                image_folder = r"C:\Users\shall\OneDrive - Holon Institute of Technology\שולחן העבודה\html\static\images\Hand signs"
+                image_folder = r"static\images\hand sign none"
                 image_path = os.path.join(image_folder, f"{character}.png")
                 print(image_path)
                 if os.path.exists(image_path):
@@ -220,7 +220,7 @@ def speech_recognition():
                     return jsonify({"message": f"לא נמצאה תמונה עבור האות {character}"})
             elif text.lower().startswith("number "):
                 character = text.split()[1].lower()
-                image_folder = r"C:\Users\shall\OneDrive - Holon Institute of Technology\שולחן העבודה\html\static\images\Hand signs"
+                image_folder = r"static\images\hand sign none"
                 image_path = os.path.join(image_folder, f"{character}.png")
                 print(image_path)
                 if os.path.exists(image_path):
