@@ -160,45 +160,7 @@ def predict():
         print("Error during prediction:", e)  # לוג - הדפסת שגיאה אם יש
         return jsonify({'error': 'Prediction failed'}), 500
 
-# @app.route('/speech_recognition')
-# def speech_recognition():
-#     try:
-#         # שימוש במיקרופון כמקור קול
-#         with sr.Microphone() as source:
-#             print("תגיד משהו...")
-#             audio = recognizer.listen(source,timeout=5, phrase_time_limit=10)
 
-#         # המרה של קול לטקסט באנגלית
-#         text = recognizer.recognize_google(audio, language="en-US")
-#         print(f"המחשב שמע: {text}")
-
-#         if text.lower().startswith("letter ") or text.lower().startswith("number "):
-#             character = text.split()[1].lower()
-#             # נתיב לתיקייה עם תמונות האותיות והמספרים
-#             image_folder = r"C:\Users\shall\OneDrive - Holon Institute of Technology\שולחן העבודה\html\static\Hand signs"
-#             image_path = os.path.join(image_folder, f"{character}.png")
-#             print(image_path)
-#             try:
-#                 # בדיקה אם הקובץ קיים
-#                 if os.path.exists(image_path):
-#                     if text.lower().startswith("letter "):
-#                         return jsonify({ "image": f"{character}.png"})
-#                     elif text.lower().startswith("number "):
-#                         if character in word_to_number:
-#                             # number = word_to_number[character]
-#                             return jsonify({ "image": f"{character}.png"})
-#                         else:
-#                             return jsonify({"message": f"לא הצלחנו לזהות את המספר: {character}"})
-#                 else:
-#                     return jsonify({"message": f"לא נמצאה תמונה עבור {character}"})
-#             except OSError:
-#                 return jsonify({"message": "בעיה בטעינת התמונה"})
-#         else:
-#             return jsonify({"message": "לא הצלחנו לזהות רק אות או מספר"})
-#     except sr.UnknownValueError:
-#         return jsonify({"message": "לא הצלחתי להבין מה אמרת"})
-#     except sr.RequestError as e:
-#         return jsonify({"message": f"בעיה בהתחברות לשירות הזיהוי: {e}"})
 
 @app.route('/speech_recognition', methods=['GET'])
 def speech_recognition():
