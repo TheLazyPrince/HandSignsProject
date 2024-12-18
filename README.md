@@ -2,8 +2,8 @@
 # Hand Signs Project
 ## Project presentation and poster
 
- -  [presentation](Presentation.pptx).
- -  [poster](Poster.pdf).
+ -  [Presentation](presentation.pptx).
+ -  [Poster](poster.pdf).
 
 ## Background and Rationale
 Sign language is a visual communication system designed for individuals with hearing impairments, relying on hand movements, facial expressions, and body language to convey messages accurately and fluidly. The body parts involved include hands, fingers, eyes, and face, which contribute to the creation of diverse and complex expressions in this language.
