@@ -2,7 +2,7 @@
 # Hand Signs Project ✋🧠
 ## Project presentation and poster 🖼️📽️
 
- -  [Presentation 🎞️](presentation.pptx).
+ -  [Presentation 🎞️](presentation.pdf).
  -  [Poster 🪧](poster.pdf).
 
 ## Background and Rationale 🧩
